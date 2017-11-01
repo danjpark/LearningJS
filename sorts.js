@@ -1,4 +1,7 @@
-function isSorted(inArray){
+var isSorted = (inArray) => {
+  // for(let i = 1; i < inArray.length; i++){
+  //   if(inArray[i] < inArray[i -1]) {return false;}
+  // }
   for(let i = 1; i < inArray.length; i++){
     if(inArray[i] < inArray[i -1]) {return false;}
   }
@@ -6,7 +9,7 @@ function isSorted(inArray){
 }
 
 
-function bubbleSort(inArray){
+var bubbleSort = (inArray) => {
   while(!isSorted(inArray)){
     for(let i = 1; i < inArray.length; i++){
       if(inArray[i] < inArray[i -1]){
@@ -21,7 +24,7 @@ function bubbleSort(inArray){
 
 // since the last element is always the greatest after each pass
 // we can skip the last n elements on the nth pass
-function bubbleSortv2(inArray){
+var bubbleSortv2 = (inArray) => {
   let counter = 0;
   while(!isSorted(inArray)){
     for(let i = 1; i < inArray.length - counter; i++){
@@ -36,7 +39,7 @@ function bubbleSortv2(inArray){
   return inArray;
 }
 
-function merge(leftArray, rightArray){
+var merge = (leftArray, rightArray) => {
   const retArray = [];
   while(leftArray.length && rightArray.length){
     if(leftArray[0] < rightArray[0]){
@@ -57,7 +60,7 @@ function merge(leftArray, rightArray){
   return retArray;
 }
 
-function mergeSort(inArray){
+var mergeSort = (inArray) => {
   if(inArray.length < 2) {return inArray;}
 
   let mid = inArray.length / 2;
