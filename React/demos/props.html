@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React - Component</title>
+    <script src="../js/react.min.js"></script>
+    <script src="../js/react-dom.min.js"></script>
+    <script src="../js/browser.min.js"></script>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+        var Movie = React.createClass({
+          render: function () {
+            return (
+                    <div>
+                      <h1>{this.props.title}</h1>
+                      <h2>{this.props.genre}</h2>
+                    </div>
+            );
+          }
+        });
+
+        ReactDOM.render(
+          <div>
+            <Movie title="Avatar" genre="fantasy"/>
+            <Movie title="Thor" genre="action"/>
+            <Movie title="Titanic" genre="romantic"/>
+          </div>
+          , document.getElementById('container'));
+    </script>
+
+</body>
+</html>
